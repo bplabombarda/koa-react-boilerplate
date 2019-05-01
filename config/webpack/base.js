@@ -1,0 +1,57 @@
+global.__rootdir = require('path').resolve(__dirname, '../../')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const webpack = require('webpack')
+
+const prod = process.env.node_env === 'production'
+
+module.exports = {
+  output: {
+    path:   `${ __rootdir }/public`,
+    pathinfo: !prod,
+    publicPath: '/',
+  },
+
+  devtool: prod ? 'source-map' : 'cheap-module-eval-source-map',
+
+  bail: prod,
+
+  module: {
+    rules: [
+      {
+        test: /\.(jsx?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ],
+      },
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${ __rootdir }/public/index.html`,
+      inject:   'body',
+      filename: 'index.html'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      test: /\.css|styl/,
+      options: {
+        postcss: [
+          autoprefixer({
+            browsers: [ 'last 2 versions' ]
+          })
+        ]
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
+
+  resolve: {
+    extensions: [ '.js', '.jsx', '.json', '.css', '.styl' ]
+  }
+}

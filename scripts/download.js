@@ -1,13 +1,15 @@
-'use strict';
+const fs = require('fs')
+const path = require('path')
+const https = require('https')
 
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
-const config = require('../config');
+const outPath = path.resolve(__dirname, '../data/')
 
-const dLPath = path.resolve(__dirname, '../tmp/Export.csv');
+if (!fs.existsSync(outPath)) {
+  fs.mkdirSync(outPath)
+}
 
-const file = fs.createWriteStream(dLPath);
-const request = https.get(config.get('src'), response => {
-	response.pipe(file);
-});
+const file = fs.createWriteStream(`${outPath}/markets.csv`)
+
+https.get('https://apps.ams.usda.gov/FarmersMarketsExport/ExcelExport.aspx', (response) => {
+	response.pipe(file)
+})

@@ -1,0 +1,35 @@
+{
+  "bail": true,
+  "collectCoverage": true,
+  "coverageDirectory": "<rootDir>/logs/jest",
+  "coverageReporters": [
+    "html",
+    "json",
+    "lcov",
+    "text"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "moduleFileExtensions": [
+    "js",
+    "jsx",
+    "json"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|styl)$": "<rootDir>/src/styles/__mocks__/styleMock.js"
+  },
+  "modulePathIgnorePatterns": ["public"],
+  "rootDir": "../../",
+  "setupFiles": [
+    "<rootDir>/config/testing/setup.js"
+  ],
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "!node_modules/react-runtime"
+  ],
+  "verbose": true
+}
