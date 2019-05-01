@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:10-stretch
 
-    working_directory: ~/farmony.io
+    working_directory: ~/interior-design-ui
 
     steps:
       - checkout
@@ -23,4 +23,4 @@ jobs:
 
       - run: npm run lint
 
-- run: npm test
+      - run: npm test
