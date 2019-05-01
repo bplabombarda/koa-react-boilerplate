@@ -22,7 +22,7 @@
   "modulePathIgnorePatterns": ["public"],
   "rootDir": "../../",
   "setupFiles": [
-    "<rootDir>/config/testing/setup.js"
+    "<rootDir>/config/testing/setUp.js"
   ],
   "setupFilesAfterEnv": [
     "<rootDir>/node_modules/jest-enzyme/lib/index.js"
