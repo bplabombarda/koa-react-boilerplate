@@ -10,6 +10,6 @@ describe('App component', () => {
   })
 
   it('renders', () => {
-    expect(wrapper.find('h1')).toHaveLength(1)
+    expect(wrapper).toMatchSnapshot()
   })
 })

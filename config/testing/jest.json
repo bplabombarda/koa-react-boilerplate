@@ -14,8 +14,7 @@
   ],
   "moduleFileExtensions": [
     "js",
-    "jsx",
-    "json"
+    "jsx"
   ],
   "moduleNameMapper": {
     "\\.(css|styl)$": "<rootDir>/src/styles/__mocks__/styleMock.js"
@@ -25,11 +24,11 @@
   "setupFiles": [
     "<rootDir>/config/testing/setup.js"
   ],
-  "transform": {
-    "^.+\\.jsx?$": "babel-jest"
-  },
-  "transformIgnorePatterns": [
-    "!node_modules/react-runtime"
+  "setupFilesAfterEnv": [
+    "<rootDir>/node_modules/jest-enzyme/lib/index.js"
+  ],
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
   ],
   "verbose": true
 }
