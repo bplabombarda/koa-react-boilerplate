@@ -1,8 +1,27 @@
 # Farmony.io
 
-## Requirements
-- [HTTPie](https://httpie.org/doc#installation) (for file download)
+## Project Requirements
 
-## Development Instructions
-1. `npm install`
-2. `npm start`
+[HTTPie](https://httpie.org/doc#installation) is used download csv data in `/scripts/download.sh`.
+
+## Running In Development Mode
+
+Install dependencies:
+
+    npm install
+
+Download data:
+
+    npm run download
+
+Run development server:
+
+    npm run watch
+
+## Testing
+
+    npm run test  // Run tests
+
+  OR
+
+    npm run test -- --watch // Run tests in watch mode

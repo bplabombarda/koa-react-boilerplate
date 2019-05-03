@@ -4,16 +4,19 @@
   "description": "Farmony.io",
   "main": "server/index.js",
   "scripts": {
-    "start": "NODE_ENV=development nodemon server/index.js --ignore 'src'",
+    "start": "",
     "build": "NODE_ENV=production webpack --config config/webpack/production.js -p",
     "build:dev": "NODE_ENV=development webpack --config config/webpack/development.js -d",
-    "clean": "./scripts/clean.sh",
+    "clean": "npm run clean:build; npm run clean:data; npm run clean:node;",
+    "clean:build": "./scripts/clean.sh",
     "clean:data": "rm -rf data",
     "clean:node": "rm -rf ./node_modules",
+    "download": "./scripts/download.sh",
     "lint": "npm run lint:styles; npm run lint:js;",
     "lint:js": "eslint ./src",
     "lint:styles": "./scripts/lintStyles.sh",
-    "test": "jest --config=config/testing/jest.json"
+    "test": "jest --config=config/testing/jest.json",
+    "watch": "NODE_ENV=development nodemon server/index.js --ignore 'src'"
   },
   "repository": {
     "type": "git",

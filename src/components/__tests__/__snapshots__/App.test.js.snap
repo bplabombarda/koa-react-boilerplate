@@ -2,11 +2,17 @@
 
 exports[`App component renders 1`] = `
 <section>
-  <h1>
+  <h1
+    onClick={[Function]}
+  >
     Frigg Off, Barb!
   </h1>
   <p>
-    Those are my personal burgers!
+    Those are my 
+    0
+     personal burgers!
   </p>
+  <TextInput />
+  <TextInput />
 </section>
 `;
