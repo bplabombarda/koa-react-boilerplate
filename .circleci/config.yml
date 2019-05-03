@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           name: install-httpie
-          command: apt-get install httpie
+          command: sudo apt-get install httpie
 
       - checkout
 
