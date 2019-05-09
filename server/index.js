@@ -1,3 +1,4 @@
+global.__rootdir = require('path').resolve(__dirname, '../')
 const app = require('./app')
 
 app.listen(3000, () => {
