@@ -15,11 +15,11 @@ module.exports = merge(base, {
   module: {
     rules: [
       {
-        test: /\.(css|styl)$/,
+        test: /\.(css|scss)$/,
         use: [
         'style-loader',
         'css-loader',
-        'stylus-loader'
+        'sass-loader'
         ],
       },
     ],

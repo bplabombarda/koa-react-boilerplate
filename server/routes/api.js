@@ -1,10 +1,9 @@
 const Router = require('koa-router')
 
-const { getMarketById, getMarkets } = require('../handlers/marketsHandler')
+const { apiHandler } = require('../handlers')
 
 const router = new Router()
 
-router.get('/markets', getMarkets)
-router.get('/markets/:id', getMarketById)
+router.get('/', apiHandler)
 
 module.exports = router

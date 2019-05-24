@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import Root from './containers/Root'
 
-require('./index.styl')
+require('./index.scss')
 
 render(
   <Root />,

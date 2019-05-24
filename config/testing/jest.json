@@ -17,7 +17,8 @@
     "jsx"
   ],
   "moduleNameMapper": {
-    "\\.(css|styl)$": "<rootDir>/src/styles/__mocks__/styleMock.js"
+    "\\.(css|styl)$": "<rootDir>/config/testing/__mocks__/stylesMock.js",
+    "axios": "<rootDir>/config/testing/__mocks__/axiosMock.js"
   },
   "modulePathIgnorePatterns": ["public"],
   "rootDir": "../../",
@@ -25,10 +26,7 @@
     "<rootDir>/config/testing/setUp.js"
   ],
   "setupFilesAfterEnv": [
-    "<rootDir>/node_modules/jest-enzyme/lib/index.js"
-  ],
-  "snapshotSerializers": [
-    "enzyme-to-json/serializer"
+    "<rootDir>/node_modules/react-testing-library/cleanup-after-each"
   ],
   "verbose": true
 }

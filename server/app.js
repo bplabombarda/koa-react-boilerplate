@@ -1,13 +1,17 @@
 const { resolve } = require('path')
 
 const Koa = require('koa')
+const helmet = require('koa-helmet')
 const logger = require('koa-logger')
+// const serve = require('koa-static')
+const views = require('koa-views')
 
 const router = require('./routes')
 
 const app = new Koa()
 
 app.use(logger())
+app.use(helmet())
 
 if (process.env.NODE_ENV !== 'production') {
   const koaWebpack = require('koa-webpack')
@@ -36,6 +40,14 @@ if (process.env.NODE_ENV !== 'production') {
     })
   })
 }
+
+// app.use(serve(__rootdir + '/public'))
+
+app.use(views(__dirname + '/views', {
+  map: {
+    html: 'nunjucks'
+  }
+}))
 
 app.use(router.routes())
 

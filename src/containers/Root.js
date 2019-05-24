@@ -2,9 +2,9 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 
 import App from '../components/App'
-import '../styles/Base.styl'
+import '../styles/Base.scss'
 
-class Root extends React.PureComponent {
+export class Root extends React.PureComponent {
   render () {
     return (
       <App />

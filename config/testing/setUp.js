@@ -1,10 +1,13 @@
 import '@babel/polyfill'
-import Adapter from 'enzyme-adapter-react-16'
-import { configure, mount, render, shallow } from 'enzyme'
+import {
+  act,
+  fireEvent,
+  render,
+  waitForElement
+} from 'react-testing-library';
 
 global.__rootdir = require('path').resolve(__dirname, '../../')
-global.shallow = shallow
+global.act = act
+global.fireEvent = fireEvent
 global.render = render
-global.mount = mount
-
-configure({ adapter: new Adapter() })
+global.waitForElement = waitForElement

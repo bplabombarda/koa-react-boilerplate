@@ -4,13 +4,9 @@ jobs:
     docker:
       - image: circleci/node:10-stretch
 
-    working_directory: ~/farmony.io
+    working_directory: ~/koa-react-boilerplate
 
     steps:
-      - run:
-          name: install-httpie
-          command: sudo apt-get install httpie
-
       - checkout
 
       - restore_cache:
@@ -19,7 +15,7 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install-dependencies
+          name: Install Dependencies
           command: npm install
 
       - save_cache:
@@ -28,9 +24,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: lint
+          name: Run Linter
           command: npm run lint
 
       - run:
-          name: run tests
+          name: Run Tests
           command: npm test
