@@ -17,7 +17,14 @@
     "jsx"
   ],
   "moduleNameMapper": {
-    "\\.(css|styl)$": "<rootDir>/src/styles/__mocks__/styleMock.js"
+    "\\.(eot|gif|jpg|otf|png|svg|ttf|webp|woff|woff2)$": "<rootDir>/config/testing/__mocks__/fileMock.js",
+    "^.+\\.(sass|scss)$": "identity-obj-proxy",
+    "(images|Images)$": "<rootDir>/config/testing/__mocks__/fileMock.js",
+    "^(Components|Pages|Widgets)$": "<rootDir>/config/testing/__mocks__/componentMock.js",
+    "^Components/(.*)$": "<rootDir>/src/components/$1",
+    "^Containers(.*)$": "<rootDir>/src/containers$1",
+    "^Pages/(.*)$": "<rootDir>/src/pages/$1",
+    "^Source/(.*)$": "<rootDir>/src/$1"
   },
   "modulePathIgnorePatterns": ["public"],
   "rootDir": "../../",
@@ -25,10 +32,7 @@
     "<rootDir>/config/testing/setUp.js"
   ],
   "setupFilesAfterEnv": [
-    "<rootDir>/node_modules/jest-enzyme/lib/index.js"
-  ],
-  "snapshotSerializers": [
-    "enzyme-to-json/serializer"
+    "<rootDir>/node_modules/react-testing-library/cleanup-after-each"
   ],
   "verbose": true
 }

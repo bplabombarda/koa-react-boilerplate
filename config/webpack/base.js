@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
 
+const aliases = require('./aliases')
+
 const prod = process.env.node_env === 'production'
 
 module.exports = {
@@ -52,6 +54,7 @@ module.exports = {
   ],
 
   resolve: {
+    alias: { ...aliases },
     extensions: [ '.js', '.jsx', '.json', '.css', '.styl' ]
   }
 }
