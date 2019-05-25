@@ -14,11 +14,11 @@ const config = convict({
     env: 'PORT',
     arg: 'port'
   },
-})
+});
 
-const env = config.get('env')
+const env = config.get('env');
 
-config.loadFile(`${ __rootdir }/config/env/${ env }.json`)
-config.validate({ allowed: 'strict' })
+config.loadFile(`${ __rootdir }/config/env/${ env }.json`);
+config.validate({ allowed: 'strict' });
 
-module.exports = config
+module.exports = config;

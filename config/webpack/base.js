@@ -1,12 +1,12 @@
-global.__rootdir = require('path').resolve(__dirname, '../../')
+global.__rootdir = require('path').resolve(__dirname, '../../');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const autoprefixer = require('autoprefixer')
-const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 
-const aliases = require('./aliases')
+const aliases = require('./aliases');
 
-const prod = process.env.node_env === 'production'
+const prod = process.env.node_env === 'production';
 
 module.exports = {
   output: {
@@ -35,12 +35,13 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${ __rootdir }/public/index.html`,
+      template: `${ __rootdir }/server/views/index.html`,
       inject:   'body',
-      filename: 'index.html'
+      filename: 'index.html',
+      title: 'Farmony.io',
     }),
     new webpack.LoaderOptionsPlugin({
-      test: /\.css|styl/,
+      test: /\.sass|scss/,
       options: {
         postcss: [
           autoprefixer({
@@ -55,6 +56,6 @@ module.exports = {
 
   resolve: {
     alias: { ...aliases },
-    extensions: [ '.js', '.jsx', '.json', '.css', '.styl' ]
+    extensions: [ '.js', '.jsx', '.json', '.css', '.sass', '.scss' ]
   }
-}
+};

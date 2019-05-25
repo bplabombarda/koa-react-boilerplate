@@ -1,5 +1,5 @@
-const base = require('./base')
-const merge = require('webpack-merge')
+const base = require('./base');
+const merge = require('webpack-merge');
 
 module.exports = merge(base, {
   mode: 'development',
@@ -15,11 +15,11 @@ module.exports = merge(base, {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.(sass|scss)$/,
         use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ],
       },
     ],
@@ -30,4 +30,4 @@ module.exports = merge(base, {
       'react-dom': '@hot-loader/react-dom',
     },
   }
-})
+});

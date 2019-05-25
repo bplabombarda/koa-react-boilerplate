@@ -1,4 +1,4 @@
-const SRC_DIR = `${ __rootdir }/src`
+const SRC_DIR = `${ __rootdir }/src`;
 
 module.exports = {
   Source:     SRC_DIR,
@@ -8,4 +8,4 @@ module.exports = {
   Images:     `${ SRC_DIR }/assets/images`,
   Pages:      `${ SRC_DIR }/pages`,
   Styles:     `${ SRC_DIR }/styles`,
-}
+};

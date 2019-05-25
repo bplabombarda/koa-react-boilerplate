@@ -15,4 +15,4 @@ RUN npm run build
 
 # Start Up
 EXPOSE 8080
-CMD npm start:${ENV}
+CMD npm run start:${ENV}

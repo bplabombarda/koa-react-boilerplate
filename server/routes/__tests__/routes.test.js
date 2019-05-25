@@ -1,7 +1,7 @@
-import router from '..'
+import router from '..';
 
 describe('Router', () => {
   it('routes', () => {
 
-  })
-})
+  });
+});

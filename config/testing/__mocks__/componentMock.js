@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { any } from 'prop-types'
 
 module.exports = new Proxy({}, {
   get: (target, property) => {
@@ -11,7 +11,7 @@ module.exports = new Proxy({}, {
 
     Mock.displayName = property
     Mock.propTypes = {
-      children: PropTypes.any,
+      children: any,
     }
 
     return Mock

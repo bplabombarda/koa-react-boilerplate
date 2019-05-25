@@ -1,12 +1,14 @@
 const apiHandler = (ctx) => {
-  ctx.body = 'This is the api.'
+  ctx.status = 200;
+  ctx.body = 'This is the api.';
 }
 
 const appHandler = (ctx) => {
-  ctx.body = 'This is the app.'
+  ctx.status = 200;
+  ctx.body = 'This is the app.';
 }
 
 module.exports = {
   apiHandler,
   appHandler,
-}
+};

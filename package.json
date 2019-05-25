@@ -5,10 +5,11 @@
   "main": "server/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config config/webpack/production.js -p",
-    "build:dev": "NODE_ENV=development webpack --config config/webpack/development.js -d",
+    "build:dev": "webpack --config config/webpack/development.js -d",
     "clean": "./scripts/clean.sh",
     "lint": "./scripts/lint.sh",
-    "start": "ENV=${ENV} NODE_ENV=production pm2-runtime start server/index.js",
+    "start:prd": "NODE_ENV=production pm2-runtime start server/index.js",
+    "start:dev": "NODE_ENV=development nodemon --watch server server/server.js",
     "test": "jest --config=config/testing/jest.json",
     "watch": "NODE_ENV=development nodemon server/index.js --ignore 'src'"
   },
@@ -63,7 +64,6 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
-    "axios": "^0.18.0",
     "convict": "^5.0.0",
     "koa": "^2.7.0",
     "koa-helmet": "^4.1.0",

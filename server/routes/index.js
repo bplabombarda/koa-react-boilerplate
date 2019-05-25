@@ -1,10 +1,10 @@
-const Router = require('koa-router')
+const Router = require('koa-router');
 
-const { apiHandler, appHandler } = require('../handlers')
+const { apiHandler, appHandler } = require('../handlers');
 
-const router = new Router()
+const router = new Router();
 
-router.get('/api', apiHandler)
-router.get('/app', appHandler)
+router.get('/api', apiHandler);
+router.get('/app', appHandler);
 
-module.exports = router
+module.exports = router;

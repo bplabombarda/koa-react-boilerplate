@@ -1,8 +1,4 @@
-# Farmony.io
-
-## Project Requirements
-
-[HTTPie](https://httpie.org/doc#installation) is used download csv data in `/scripts/download.sh`.
+# Koa & React Boilerplate Project
 
 ## Running In Development Mode
 
