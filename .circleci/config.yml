@@ -24,9 +24,19 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Run Linter
+          name: Lint
           command: npm run lint
 
       - run:
           name: Run Tests
-          command: npm test
+          command: npm run test
+
+      - run:
+          name: Build project
+          command: npm run build
+
+      - save_cache:
+          paths:
+            - node_modules
+            - build
+          key: v1-dependencies-{{ .Branch }}

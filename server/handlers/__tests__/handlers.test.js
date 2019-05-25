@@ -1,5 +1,7 @@
-import { indexHAndler } from '..'
+import { apiHandler, appHandler } from '..'
 
-describe('indexHandler', () => {
-  
+describe('Handlers', () => {
+  it('handles', () => {
+
+  })
 })

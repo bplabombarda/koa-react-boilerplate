@@ -17,8 +17,14 @@
     "jsx"
   ],
   "moduleNameMapper": {
-    "\\.(css|styl)$": "<rootDir>/config/testing/__mocks__/stylesMock.js",
-    "axios": "<rootDir>/config/testing/__mocks__/axiosMock.js"
+    "\\.(eot|gif|jpg|otf|png|svg|ttf|webp|woff|woff2)$": "<rootDir>/config/testing/__mocks__/fileMock.js",
+    "^.+\\.(sass|scss)$": "identity-obj-proxy",
+    "(images|Images)$": "<rootDir>/config/testing/__mocks__/fileMock.js",
+    "^(Components|Pages|Widgets)$": "<rootDir>/config/testing/__mocks__/componentMock.js",
+    "^Components/(.*)$": "<rootDir>/src/components/$1",
+    "^Containers(.*)$": "<rootDir>/src/containers$1",
+    "^Pages/(.*)$": "<rootDir>/src/pages/$1",
+    "^Source/(.*)$": "<rootDir>/src/$1"
   },
   "modulePathIgnorePatterns": ["public"],
   "rootDir": "../../",

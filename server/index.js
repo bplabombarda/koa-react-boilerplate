@@ -1,6 +1,9 @@
 global.__rootdir = require('path').resolve(__dirname, '../')
 const app = require('./app')
+const config = require('./config')
 
-app.listen(3000, () => {
-  console.info(`http://localhost:3000`) // eslint-disable-line no-console
+const PORT = config.get('port')
+
+app.listen(PORT, () => {
+  console.info(`http://localhost:${ PORT }`) // eslint-disable-line no-console
 })

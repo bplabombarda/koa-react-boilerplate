@@ -1,11 +1,10 @@
 const Router = require('koa-router')
 
-const api = require('./api')
-const { appHandler } = require('../handlers')
+const { apiHandler, appHandler } = require('../handlers')
 
 const router = new Router()
 
-router.use('/api', api.routes())
+router.get('/api', apiHandler)
 router.get('/app', appHandler)
 
 module.exports = router

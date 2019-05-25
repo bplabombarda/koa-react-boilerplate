@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'Linting Scss...'
+echo 'Linting styles...'
 ./node_modules/.bin/stylelint 'src' --config .stylelintrc;
 
 echo 'Linting JavaScript...'
